@@ -15,18 +15,18 @@ const getLanguageTech = () => new Promise((resolve, reject) => {
     .catch(reject);
 });
 // CREATE LanguageTech
-const createLanguageTech = (payload) => new Promise((resolve, reject) => {
-  fetch(`${endpoint}/languagetech.json`, {
-    method: 'POST',
-    headers: {
-      'Content-Type': 'application/json',
-    }, // you technically do not need the options object for GET requests, but using it here for consistency
-    body: JSON.stringify(payload)
-  })
-    .then((response) => response.json())
-    .then((data) => resolve(data))
-    .catch(reject);
-});
+// const createLanguageTech = (payload) => new Promise((resolve, reject) => {
+//   fetch(`${endpoint}/languagetech.json`, {
+//     method: 'POST',
+//     headers: {
+//       'Content-Type': 'application/json',
+//     }, // you technically do not need the options object for GET requests, but using it here for consistency
+//     body: JSON.stringify(payload)
+//   })
+//     .then((response) => response.json())
+//     .then((data) => resolve(data))
+//     .catch(reject);
+// });
 
 // GET SINGLE LanguageTech
 const getSingleLanguageTech = (firebaseKey) => new Promise((resolve, reject) => {
@@ -68,7 +68,7 @@ const updateLanguageTech = (payload) => new Promise((resolve, reject) => {
     .catch(reject);
 });
 
-// TODO: GET A SINGLE LanguageTech's VOCABULARY
+// GET A SINGLE LanguageTech's VOCABULARY
 const getLanguageTechVocabulary = (firebaseKey) => new Promise((resolve, reject) => {
   fetch(`${endpoint}/vocabulary.json?orderBy="languageTechId"&equalTo="${firebaseKey}"`, {
     method: 'GET',
@@ -96,7 +96,7 @@ const getTrendingLanguageTech = () => new Promise((resolve, reject) => {
 
 export {
   getLanguageTech,
-  createLanguageTech,
+  //   createLanguageTech,
   getSingleLanguageTech,
   deleteSingleLanguageTech,
   updateLanguageTech,
