@@ -1,7 +1,7 @@
 import clearDom from '../utils/clearDom';
 import renderToDOM from '../utils/renderToDom';
 
-const viewvocab = (obj) => {
+const viewVocab = (obj) => {
   clearDom();
 
   const domString = `
@@ -18,12 +18,12 @@ const viewvocab = (obj) => {
      Author Email: <a href="mailto:${obj.authorObject.email}">${obj.authorObject.email}</a>
      <p>${obj.description || ''}</p>
      <hr>
-       <p>${item.categoryType}</p>
-       <p>${item.timeSubmitted}</p>           
+       <p>${obj.categoryType}</p>
+       <p>${obj.timeSubmitted}</p>           
       </div>
     </div>`;
 
   renderToDOM('#view', domString);
 };
 
-export default viewvocab;
+export default viewVocab;

@@ -9,8 +9,8 @@ const emptyVocab = () => {
 const showVocab = (array) => {
   clearDom();
 
-//   const btnString = '<button class="btn btn-success btn-lg mb-4" id="add-vocab-btn">Add A vocab</button>';
-//   renderToDOM('#add-button', btnString);
+  //   const btnString = '<button class="btn btn-success btn-lg mb-4" id="add-vocab-btn">Add A vocab</button>';
+  //   renderToDOM('#add-button', btnString);
 
   let domString = '';
   array.forEach((item) => {
