@@ -11,6 +11,10 @@ const addVocabForm = (obj = {}) => {
         <input type="text" class="form-control" id="title" aria-describedby="vocabname" placeholder="Enter Some Knowledge" value="${obj.vocab || ''}" required>
       </div>
       <div class="form-group">
+      <label for="image">Image URL</label>
+      <input type="url" class="form-control" id="image" placeholder="Image URL" value="${obj.image || ''}" required>
+    </div>
+      <div class="form-group">
         <label for="description">Description</label>
         <textarea class="form-control" placeholder="Description" id="description" style="height: 100px">${obj.description || ''}</textarea>
       </div>

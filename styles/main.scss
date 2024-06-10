@@ -10,7 +10,7 @@ body {
 }
 .navbar-dark .navbar-brand {
   font-family: "Oregano", cursive !important;
-  color: red;
+  color: rgb(0, 255, 106);
   font-weight: 900;
   font-size: 2em;
 }
@@ -34,7 +34,7 @@ body {
 .logout {
   margin: 0 20px;
   font-size: 25px;
-  color: white;
+  color: rgb(43, 153, 52);
 }
 
 #main-container {
@@ -53,7 +53,7 @@ body {
     width: 60%;
     margin: auto;
     justify-content: center;
-    color: white;
+    color: rgb(40, 133, 40);
 
     #formModal {
       color: black;
