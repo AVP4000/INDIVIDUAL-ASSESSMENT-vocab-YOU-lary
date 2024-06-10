@@ -3,7 +3,7 @@ import domBuilder from '../components/shared/domBuilder';
 import navBar from '../components/shared/navBar';
 import domEvents from '../events/domEvents';
 import formEvents from '../events/formEvents';
-// import navigationEvents from '../events/navigationEvents';
+import navigationEvents from '../events/navEvents';
 // import { getVocab } from '../api/vocabData';
 // import { showBooks } from '../pages/vocab';
 import { getLanguageTechVocabulary } from '../api/langTechData';
