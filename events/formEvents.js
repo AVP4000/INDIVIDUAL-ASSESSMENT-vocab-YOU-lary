@@ -1,7 +1,7 @@
 import { createVocab, getVocab, updateVocab } from '../api/vocabData';
 import { showVocab } from '../pages/vocab';
 
-const formEvents = () => {
+const formEvents = (user) => {
   document.querySelector('#form-container').addEventListener('submit', (e) => {
     e.preventDefault();
     // TODO: CLICK EVENT FOR SUBMITTING FORM FOR ADDING A BOOK
@@ -9,12 +9,13 @@ const formEvents = () => {
       const payload = {
         vocab: document.querySelector('#vocab').value,
         description: document.querySelector('#description').value,
-        langTechId: document.querySelector('#categoryType').value,
+        categoryType: document.querySelector('#categoryType').value,
+        timeSubmitted: Date.now(),
       };
       createVocab(payload).then(({ word }) => {
         const patchPayload = { firebaseKey: word };
         updateVocab(patchPayload).then(() => {
-          getVocab().then(showVocab);
+          getVocab(user).then(showVocab);
         });
       });
     }

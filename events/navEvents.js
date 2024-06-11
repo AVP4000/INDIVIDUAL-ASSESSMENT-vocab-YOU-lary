@@ -7,9 +7,10 @@ import { getVocab, vocabularyWordOfTheMonth } from '../api/vocabData';
 import { getLanguageTech, getTrendingLanguageTech } from '../api/langTechData';
 import { showVocab } from '../pages/vocab';
 import { showLanguageTech } from '../pages/langTech';
+import addVocabForm from '../components/forms/addVocabForm';
 
 // navigation events --CHECK THE NAV BAR UNDER SHARED--
-const navigationEvents = () => {
+const navigationEvents = (user) => {
   // LOGOUT BUTTON
   document.querySelector('#logout-button')
     .addEventListener('click', signOut);
@@ -22,7 +23,12 @@ const navigationEvents = () => {
 
   // ALL VOCAB
   document.querySelector('#all-vocab').addEventListener('click', () => {
-    getVocab().then(showVocab);
+    getVocab(user).then(showVocab);
+  });
+
+  // VOCAB FORM
+  document.querySelector('#add-vocab-btn').addEventListener('click', () => {
+    addVocabForm(user);
   });
 
   // STUDENTS Create an event listener for the LANG/TECH
