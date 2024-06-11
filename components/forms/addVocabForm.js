@@ -2,7 +2,7 @@ import clearDom from '../../utils/clearDom';
 import renderToDOM from '../../utils/renderToDom';
 
 // USING THIS FORM FOR BOTH CREATE AND UPDATE
-const addVocabForm = (user, obj = {}) => {
+const addVocabForm = (obj = {}) => {
   clearDom();
   const domString = `
     <form id="${obj.firebaseKey ? `update-vocab--${obj.firebaseKey}` : 'submit-vocab'}" class="mb-4">
@@ -17,7 +17,7 @@ const addVocabForm = (user, obj = {}) => {
 <br>
       <div class="form-group" id="select-category-type">
       <label for="category">Categories</label>
-        <select class="form-control" placeholder="Select Category" id="categoryTypes" name="vocabCategory" value="${obj.categoryType || ''}" required>
+        <select class="form-control" placeholder="Select Category" id="categoryType" name="vocabCategory" value="${obj.categoryType || ''}" required>
         <option value="">Select a Language</option>
           <option value="Python" ${obj.categoryType === 'Python' ? 'selected' : ''}>Python</option>
           <option value="Java" ${obj.categoryType === 'Java' ? 'selected' : ''}>Java</option>
