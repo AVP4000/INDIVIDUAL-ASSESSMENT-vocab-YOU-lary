@@ -7,7 +7,8 @@
         "image": "/Images/pythonImage.jpg",
         "categoryType": "Python",
         "wordOfTheMonth": true,
-        "timeSubmitted": "2024-04-08T12:00:00Z"
+        "timeSubmitted": "2024-04-08T12:00:00Z",
+        "uid": ""
     },
     "-MiBsknNSQ6aBG1-2lQS": {
         "vocab": "Promise",
@@ -17,7 +18,8 @@
         "image": "/Images/javascriptImage.jpg",
         "wordOfTheMonth": true,
         "categoryType": "Javascript",
-        "timeSubmitted": "2024-05-02T15:30:00Z"
+        "timeSubmitted": "2024-05-02T15:30:00Z",
+        "uid": ""
     },
     "-MiBuCve4-r_H-RLUOh2": {
         "vocab": "Interface",
@@ -27,7 +29,8 @@
         "image": "/Images/javaImage.jpg",
         "wordOfTheMonth": false,
         "categoryType": "Java",
-        "timeSubmitted": "2024-03-09T08:45:00Z"
+        "timeSubmitted": "2024-03-09T08:45:00Z",
+        "uid": ""
     },
     "-MiBuU13EaKmGOMjJF-X": {
         "vocab": "Pointer",
@@ -37,6 +40,7 @@
         "image": "/Images/c++Image.jpg",
         "wordOfTheMonth": false,
         "categoryType": "C++",
-        "timeSubmitted": "2024-02-23T22:10:00Z"
+        "timeSubmitted": "2024-02-23T22:10:00Z",
+        "uid": ""
     }
 }
