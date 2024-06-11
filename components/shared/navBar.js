@@ -19,7 +19,7 @@ const navBar = () => {
               <a class="nav-link" href="#" id="word-of-the-month">Words of The Month</a>
             </li>
             <li class="nav-item">
-            <a class="nav-link" href="#" id="create-vocab">Add New Vocab</a>
+            <a class="nav-link" href="#" id="add-vocab-btn">Add New Vocab</a>
           </li>
             <li class="nav-item">
               <a class="nav-link" href="#" id="language-tech">Language/Tech</a>

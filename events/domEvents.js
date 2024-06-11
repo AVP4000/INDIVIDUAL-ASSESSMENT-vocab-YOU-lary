@@ -6,7 +6,7 @@ import viewVocab from '../pages/viewVocab';
 import { getvocabDetails } from '../api/mergedData';
 // import { showLanguageTech } from '../pages/langTech';
 
-const domEvents = () => {
+const domEvents = (user) => {
   document.querySelector('#main-container').addEventListener('click', (e) => {
     // TODO: CLICK EVENT FOR DELETING A vocab
     if (e.target.id.includes('delete-vocab')) {
@@ -17,7 +17,7 @@ const domEvents = () => {
         const [, firebaseKey] = e.target.id.split('--');
 
         deleteVocab(firebaseKey).then(() => {
-          getVocab().then(showVocab);
+          getVocab(user).then(showVocab);
         });
       }
     }

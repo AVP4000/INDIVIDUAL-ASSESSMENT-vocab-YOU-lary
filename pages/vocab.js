@@ -15,17 +15,16 @@ const showVocab = (array) => {
   let domString = '';
   array.forEach((item) => {
     domString += `
-      <div class="card">
-        <img class="card-img-top" src=${item.image} alt=${item.title} style="height: 400px;">
-        <div class="card-body" style="height: 180px;">
-          <h5 class="card-title">${item.vocab}</h5>
-            <p class="card-text bold">${item.wordOfTheMonth ? `<span class="badge badge-info sale-badge"><i class="fa fa-bell" aria-hidden="true"></i> Sale</span> $${item.price}` : `$${item.price}`}</p>
-            <hr>
-            <p>${item.description}</p>
-            <i id="edit-vocab-btn--${item.firebaseKey}" class="fas fa-edit btn btn-info"></i>
-            <i id="delete-vocab-btn--${item.firebaseKey}" class="btn btn-danger fas fa-trash-alt"></i>
-        </div>
-      </div>`;
+    <div class="card">
+      <div class="card-body">
+        <h3 class="card-title">${item.vocab}</h3>
+        <p class="card-text"><bold>${item.categoryType}</bold></p>
+        <p class="card-text">${item.definition}</p>
+        <i id="edit-vocab-btn--${item.firebaseKey}" class="fas fa-edit btn btn-info"> Edit</i>
+        <i id="delete-vocab-btn--${item.firebaseKey}" class="btn btn-danger fas fa-trash-alt"> Delete</i>
+      </div>
+    </div>
+    `;
   });
   renderToDOM('#store', domString);
 };

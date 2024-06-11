@@ -3,15 +3,21 @@ import client from '../utils/client';
 const endpoint = client.databaseURL;
 
 //  GET ALL LanguageTech
-const getLanguageTech = () => new Promise((resolve, reject) => {
-  fetch(`${endpoint}/languagetech.json`, {
+const getLanguageTech = (user) => new Promise((resolve, reject) => {
+  fetch(`${endpoint}/languagetech.json?orderBy="uid"&equalTo="${user.uid}"`, {
     method: 'GET',
     headers: {
       'Content-Type': 'application/json',
     }, // you technically do not need the options object for GET requests, but using it here for consistency
   })
     .then((response) => response.json())
-    .then((data) => resolve(Object.values(data)))
+    .then((data) => {
+      if (data) {
+        resolve(Object.values(data));
+      } else {
+        resolve([]);
+      }
+    })
     .catch(reject);
 });
 // CREATE LanguageTech
