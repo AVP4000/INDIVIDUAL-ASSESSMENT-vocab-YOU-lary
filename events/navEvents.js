@@ -3,7 +3,14 @@
 // import { showAuthors } from '../pages/authors';
 // import { showBooks } from '../pages/books';
 import { signOut } from '../utils/auth';
-import { getVocab, vocabularyWordOfTheMonth, getJava, getJavascript, getPython, getCplus } from '../api/vocabData';
+import {
+  getVocab,
+  vocabularyWordOfTheMonth,
+  getJava,
+  getJavascript,
+  getPython,
+  getCplus
+} from '../api/vocabData';
 import { getLanguageTech, getTrendingLanguageTech } from '../api/langTechData';
 import { showVocab } from '../pages/vocab';
 import { showLanguageTech } from '../pages/langTech';
