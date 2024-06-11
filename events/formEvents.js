@@ -10,12 +10,13 @@ const formEvents = (user) => {
         vocab: document.querySelector('#vocab').value,
         description: document.querySelector('#description').value,
         categoryType: document.querySelector('#categoryType').value,
+        uid: user.uid,
         timeSubmitted: Date.now(),
       };
       createVocab(payload).then(({ word }) => {
         const patchPayload = { firebaseKey: word };
         updateVocab(patchPayload).then(() => {
-          getVocab(user).then(showVocab);
+          getVocab(user.uid).then(showVocab);
         });
       });
     }
@@ -26,11 +27,11 @@ const formEvents = (user) => {
       const payload = {
         vocab: document.querySelector('#vocab').value,
         description: document.querySelector('#description').value,
-        langTechId: document.querySelector('#categoryType').value,
+        categoryType: document.querySelector('#categoryType').value,
         firebaseKey,
       };
       updateVocab(payload).then(() => {
-        getVocab().then(showVocab);
+        getVocab(user.uid).then(showVocab);
       });
     }
   });

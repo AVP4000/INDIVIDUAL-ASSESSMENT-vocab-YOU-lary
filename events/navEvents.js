@@ -3,7 +3,7 @@
 // import { showAuthors } from '../pages/authors';
 // import { showBooks } from '../pages/books';
 import { signOut } from '../utils/auth';
-import { getVocab, vocabularyWordOfTheMonth } from '../api/vocabData';
+import { getVocab, vocabularyWordOfTheMonth, getJava, getJavascript, getPython, getCplus } from '../api/vocabData';
 import { getLanguageTech, getTrendingLanguageTech } from '../api/langTechData';
 import { showVocab } from '../pages/vocab';
 import { showLanguageTech } from '../pages/langTech';
@@ -18,12 +18,30 @@ const navigationEvents = (user) => {
   // Words of the month
   document.querySelector('#word-of-the-month').addEventListener('click', () => {
     // console.warn('CLICKED WORD OF MONTH');
-    vocabularyWordOfTheMonth().then(showVocab);
+    vocabularyWordOfTheMonth(user.uid).then(showVocab);
   });
 
   // ALL VOCAB
   document.querySelector('#all-vocab').addEventListener('click', () => {
-    getVocab(user).then(showVocab);
+    getVocab(user.uid).then(showVocab);
+  });
+
+  // Filter
+  // JAVA
+  document.querySelector('#java-btn').addEventListener('click', () => {
+    getJava(user.uid).then(showVocab);
+  });
+  // JAVASCRIPT
+  document.querySelector('#javascript-btn').addEventListener('click', () => {
+    getJavascript(user.uid).then(showVocab);
+  });
+  // PYTHON
+  document.querySelector('#python-btn').addEventListener('click', () => {
+    getPython(user.uid).then(showVocab);
+  });
+  // C++
+  document.querySelector('#cplus-btn').addEventListener('click', () => {
+    getCplus(user.uid).then(showVocab);
   });
 
   // VOCAB FORM

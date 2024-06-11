@@ -17,7 +17,7 @@ const domEvents = (user) => {
         const [, firebaseKey] = e.target.id.split('--');
 
         deleteVocab(firebaseKey).then(() => {
-          getVocab(user).then(showVocab);
+          getVocab(user.uid).then(showVocab);
         });
       }
     }

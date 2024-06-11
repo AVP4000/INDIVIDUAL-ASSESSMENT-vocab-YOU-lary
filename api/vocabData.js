@@ -3,8 +3,8 @@ import client from '../utils/client';
 const endpoint = client.databaseURL;
 
 // GET VOCAB
-const getVocab = () => new Promise((resolve, reject) => {
-  fetch(`${endpoint}/vocabulary.json`, {
+const getVocab = (uid) => new Promise((resolve, reject) => {
+  fetch(`${endpoint}/vocabulary.json?orderBy="uid"&equalTo="${uid}"`, {
     method: 'GET',
     headers: {
       'Content-Type': 'application/json',
@@ -76,6 +76,66 @@ const updateVocab = (payload) => new Promise((resolve, reject) => {
     .catch(reject);
 });
 
+// FILTER BY CODING LANGUAGES
+const getPython = (uid) => new Promise((resolve, reject) => {
+  fetch(`${endpoint}/vocabulary.json?orderBy="uid"&equalTo="${uid}"`, {
+    method: 'GET',
+    headers: {
+      'Content-Type': 'application/json',
+    },
+  })
+    .then((response) => response.json())
+    .then((data) => {
+      const python = Object.values(data).filter((obj) => obj.categoryType === 'Python');
+      resolve(python);
+    })
+    .catch(reject);
+});
+
+const getJava = (uid) => new Promise((resolve, reject) => {
+  fetch(`${endpoint}/vocabulary.json?orderBy="uid"&equalTo="${uid}"`, {
+    method: 'GET',
+    headers: {
+      'Content-Type': 'application/json',
+    },
+  })
+    .then((response) => response.json())
+    .then((data) => {
+      const java = Object.values(data).filter((obj) => obj.categoryType === 'Java');
+      resolve(java);
+    })
+    .catch(reject);
+});
+
+const getJavascript = (uid) => new Promise((resolve, reject) => {
+  fetch(`${endpoint}/vocabulary.json?orderBy="uid"&equalTo="${uid}"`, {
+    method: 'GET',
+    headers: {
+      'Content-Type': 'application/json',
+    },
+  })
+    .then((response) => response.json())
+    .then((data) => {
+      const javascript = Object.values(data).filter((obj) => obj.categoryType === 'JavaScript');
+      resolve(javascript);
+    })
+    .catch(reject);
+});
+
+const getCplus = (uid) => new Promise((resolve, reject) => {
+  fetch(`${endpoint}/vocabulary.json?orderBy="uid"&equalTo="${uid}"`, {
+    method: 'GET',
+    headers: {
+      'Content-Type': 'application/json',
+    },
+  })
+    .then((response) => response.json())
+    .then((data) => {
+      const cplus = Object.values(data).filter((obj) => obj.categoryType === 'C++');
+      resolve(cplus);
+    })
+    .catch(reject);
+});
 // FILTER vocabulary for WordOfTheMonth
 const vocabularyWordOfTheMonth = () => new Promise((resolve, reject) => {
   fetch(`${endpoint}/vocabulary.json?orderBy="wordOfTheMonth"&equalTo=true`, {
@@ -97,5 +157,9 @@ export {
   vocabularyWordOfTheMonth,
   deleteVocab,
   getSingleVocab,
-  updateVocab
+  updateVocab,
+  getCplus,
+  getJava,
+  getJavascript,
+  getPython
 };

@@ -1,6 +1,5 @@
 import clearDom from '../../utils/clearDom';
 import renderToDOM from '../../utils/renderToDom';
-import selectLanguageTech from './selectLangTech';
 
 // USING THIS FORM FOR BOTH CREATE AND UPDATE
 const addVocabForm = (user, obj = {}) => {
@@ -15,16 +14,23 @@ const addVocabForm = (user, obj = {}) => {
         <label for="description">Description</label>
         <textarea class="form-control" placeholder="Description" id="description" style="height: 100px">${obj.description || ''}</textarea>
       </div>
-      <div class="form-group">
-        <label for="categoryType">Language/Tech</label>
-        <textarea class="form-control" placeholder="Category" id="categoryType" style="height: 100px">${obj.categoryType || ''}</textarea>
+<br>
+      <div class="form-group" id="select-category-type">
+      <label for="category">Categories</label>
+        <select class="form-control" placeholder="Select Category" id="categoryTypes" name="vocabCategory" value="${obj.categoryType || ''}" required>
+        <option value="">Select a Language</option>
+          <option value="Python" ${obj.categoryType === 'Python' ? 'selected' : ''}>Python</option>
+          <option value="Java" ${obj.categoryType === 'Java' ? 'selected' : ''}>Java</option>
+          <option value="Javascript" ${obj.categoryType === 'JavaScript' ? 'selected' : ''}>JavaScript</option>
+          <option value="C++" ${obj.categoryType === 'C++' ? 'selected' : ''}>C++</option>
+        </select>
       </div>
+      <br>  
       <button type="submit" class="btn btn-primary">Submit Vocab
       </button>
     </form>`;
 
   renderToDOM('#form-container', domString);
-  selectLanguageTech(user, `${obj || ''}`);
 };
 
 export default addVocabForm;
