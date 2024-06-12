@@ -11,11 +11,11 @@ const addVocabForm = (obj = {}) => {
         <input type="text" class="form-control" id="vocab" aria-describedby="vocabname" placeholder="Enter Some Knowledge" value="${obj.vocab || ''}" required>
       </div>
       <div class="form-group">
-        <label for="description">Description</label>
-        <textarea class="form-control" placeholder="Description" id="description" style="height: 100px">${obj.description || ''}</textarea>
+        <label for="vocabdescription">Definition</label>
+        <textarea class="form-control" placeholder="Definition" id="definition" style="height: 100px">${obj.definition || ''}</textarea>
       </div>
 <br>
-      <div class="form-group" id="select-category-type">
+      <div class="form-group" id="select-category">
       <label for="category">Categories</label>
         <select class="form-control" placeholder="Select Category" id="categoryType" name="vocabCategory" value="${obj.categoryType || ''}" required>
         <option value="">Select a Language</option>

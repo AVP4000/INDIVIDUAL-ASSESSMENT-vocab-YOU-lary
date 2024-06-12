@@ -8,7 +8,7 @@ const formEvents = (user) => {
     if (e.target.id.includes('submit-vocab')) {
       const payload = {
         vocab: document.querySelector('#vocab').value,
-        description: document.querySelector('#description').value,
+        definition: document.querySelector('#definition').value,
         categoryType: document.querySelector('#categoryType').value,
         uid: user.uid,
         timeSubmitted: Date.now(),
@@ -26,7 +26,7 @@ const formEvents = (user) => {
       const [, firebaseKey] = e.target.id.split('--');
       const payload = {
         vocab: document.querySelector('#vocab').value,
-        description: document.querySelector('#description').value,
+        definition: document.querySelector('#definition').value,
         categoryType: document.querySelector('#categoryType').value,
         firebaseKey,
       };

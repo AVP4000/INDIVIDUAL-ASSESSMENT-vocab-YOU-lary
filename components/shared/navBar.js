@@ -39,7 +39,6 @@ const navBar = () => {
           <span class="navbar-text">
             <div id="cart-button"></div>
             <div id="logout-button"></div>
-            <div id="login-form-container"></div>
           </span>
         </div>
         </div>
