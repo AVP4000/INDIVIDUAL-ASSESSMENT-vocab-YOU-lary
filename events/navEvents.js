@@ -1,8 +1,3 @@
-// import { getBooks, booksOnSale } from '../api/bookData';
-// import { getAuthors, getFavAuthors } from '../api/authorData';
-// import { showAuthors } from '../pages/authors';
-// import { showBooks } from '../pages/books';
-import { signOut } from '../utils/auth';
 import {
   getVocab,
   vocabularyWordOfTheMonth,
@@ -15,6 +10,7 @@ import { getLanguageTech, getTrendingLanguageTech } from '../api/langTechData';
 import { showVocab } from '../pages/vocab';
 import { showLanguageTech } from '../pages/langTech';
 import addVocabForm from '../components/forms/addVocabForm';
+import { signOut } from '../utils/auth';
 
 // navigation events --CHECK THE NAV BAR UNDER SHARED--
 const navigationEvents = (user) => {
