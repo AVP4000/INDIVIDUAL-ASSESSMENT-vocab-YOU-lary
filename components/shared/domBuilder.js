@@ -5,7 +5,6 @@ const domBuilder = () => {
   <div id="navigation"></div>
   <div id="main-container">
   <div id="all-btns">
-  <button type="button" class="btn btn-light" id="all-vocab">All</button>
   <button type="button" class="btn btn-success" id="java-btn">JAVA</button>
   <button type="button" class="btn btn-success" id="javascript-btn">JavaScript</button>
   <button type="button" class="btn btn-success" id="python-btn">Python</button>

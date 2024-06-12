@@ -2,13 +2,13 @@ import { createVocab, getVocab, updateVocab } from '../api/vocabData';
 import { showVocab } from '../pages/vocab';
 
 const formEvents = (user) => {
-  document.querySelector('#form-container').addEventListener('submit', (e) => {
+  document.querySelector('#main-container').addEventListener('submit', (e) => {
     e.preventDefault();
     // TODO: CLICK EVENT FOR SUBMITTING FORM FOR ADDING A BOOK
     if (e.target.id.includes('submit-vocab')) {
       const payload = {
         vocab: document.querySelector('#vocab').value,
-        definition: document.querySelector('#definition').value,
+        definition: document.querySelector('#description').value,
         categoryType: document.querySelector('#categoryType').value,
         uid: user.uid,
         timeSubmitted: Date.now(),
@@ -26,7 +26,7 @@ const formEvents = (user) => {
       const [, firebaseKey] = e.target.id.split('--');
       const payload = {
         vocab: document.querySelector('#vocab').value,
-        definition: document.querySelector('#definition').value,
+        definition: document.querySelector('#description').value,
         categoryType: document.querySelector('#categoryType').value,
         firebaseKey,
       };

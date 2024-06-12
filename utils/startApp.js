@@ -10,7 +10,7 @@ import { showVocab } from '../pages/vocab';
 // import { showLanguageTech } from '../pages/langTech';
 
 const startApp = (user) => {
-  domBuilder(user); // BUILD THE DOM
+  domBuilder(); // BUILD THE DOM
   domEvents(user); // ADD THE EVENT LISTENTERS TO THE DOM
   formEvents(user); // ADD FORM EVENT LISTENTERS TO THE DOM
   navBar(); // DYNAMICALLY ADD THE NAV
