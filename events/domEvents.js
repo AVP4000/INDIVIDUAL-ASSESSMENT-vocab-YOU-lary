@@ -22,11 +22,11 @@ const domEvents = (user) => {
       }
     }
 
-    // TODO: CLICK EVENT FOR SHOWING FORM FOR ADDING A vocab
-    if (e.target.id.includes('add-vocab-btn')) {
-      // console.warn('ADD vocab');
-      addVocabForm(user);
-    }
+    // // TODO: CLICK EVENT FOR SHOWING FORM FOR ADDING A vocab
+    // if (e.target.id.includes('add-vocab-btn')) {
+    //   // console.warn('ADD vocab');
+    //   addVocabForm(user);
+    // }
 
     // TODO: CLICK EVENT EDITING/UPDATING A vocab
     if (e.target.id.includes('edit-vocab-btn')) {
@@ -35,6 +35,7 @@ const domEvents = (user) => {
       const [, firebaseKey] = e.target.id.split('--');
 
       getSingleVocab(firebaseKey).then((vocabObj) => addVocabForm(vocabObj));
+
       // getSinglevocab(firebaseKey).then(addVocabForm); // using the callback method
     }
 

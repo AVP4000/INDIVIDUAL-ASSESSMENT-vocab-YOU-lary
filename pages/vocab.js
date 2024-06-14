@@ -13,18 +13,18 @@ const showVocab = (array) => {
   //   renderToDOM('#add-button', btnString);
 
   let domString = '';
-  array.forEach((item) => {
+  array.forEach((obj) => {
     domString += `
     <div class="card">
       <div class="card-body">
-        <h3 class="card-title">${item.vocab}</h3>
-        <p class="card-text"><bold>${item.categoryType}</bold></p>
-        <p class="card-text">${item.definition}</p>
+        <h3 class="card-title">${obj.vocab}</h3>
+        <p class="card-text"><bold>${obj.categoryType}</bold></p>
+        <p class="card-text">${obj.definition}</p>
         <hr>
-        <i id="edit-vocab-btn--${item.firebaseKey}" class="fas fa-edit btn btn-info"> Edit</i>
-        <i id="delete-vocab-btn--${item.firebaseKey}" class="btn btn-danger fas fa-trash-alt"> Delete</i>
+        <i id="edit-vocab-btn--${obj.firebaseKey}" class="fas fa-edit btn btn-info"> Edit</i>
+        <i id="delete-vocab-btn--${obj.firebaseKey}" class="btn btn-danger fas fa-trash-alt"> Delete</i>
       </div>
-      <div class="card-footer">Submitted: ${item.timeSubmitted}</div>
+      <div class="card-footer">Submitted: ${obj.timeSubmitted}</div>
     </div>
     `;
   });
