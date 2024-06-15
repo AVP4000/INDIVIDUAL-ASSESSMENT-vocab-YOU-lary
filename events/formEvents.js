@@ -11,7 +11,7 @@ const formEvents = (user) => {
         definition: document.querySelector('#description').value,
         categoryType: document.querySelector('#categoryType').value,
         uid: user.uid,
-        timeSubmitted: Date.now(),
+        timeSubmitted: new Date().toLocaleDateString(),
       };
       createVocab(payload).then(({ name }) => {
         const patchPayload = { firebaseKey: name };
