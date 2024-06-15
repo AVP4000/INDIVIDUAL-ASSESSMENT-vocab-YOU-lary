@@ -149,8 +149,6 @@ const vocabularyWordOfTheMonth = () => new Promise((resolve, reject) => {
     .catch(reject);
 });
 
-// TODO: STRETCH...SEARCH vocabulary
-
 export {
   getVocab,
   createVocab,
