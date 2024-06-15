@@ -22,32 +22,6 @@ const getVocab = (uid) => new Promise((resolve, reject) => {
     .catch(reject);
 });
 
-// DELETE VOCAB
-const deleteVocab = (firebaseKey) => new Promise((resolve, reject) => {
-  fetch(`${endpoint}/vocabulary/${firebaseKey}.json`, {
-    method: 'DELETE',
-    headers: {
-      'Content-Type': 'application/json',
-    }, // you technically do not need the options object for GET requests, but using it here for consistency
-  })
-    .then((response) => response.json())
-    .then((data) => resolve(data))
-    .catch(reject);
-});
-
-// GET SINGLE Vocab
-const getSingleVocab = (firebaseKey) => new Promise((resolve, reject) => {
-  fetch(`${endpoint}/vocabulary/${firebaseKey}.json`, {
-    method: 'GET',
-    headers: {
-      'Content-Type': 'application/json',
-    }, // you technically do not need the options object for GET requests, but using it here for consistency
-  })
-    .then((response) => response.json())
-    .then((data) => resolve(data)) // will resolve a single object
-    .catch(reject);
-});
-
 // CREATE Vocab
 const createVocab = (payload) => new Promise((resolve, reject) => {
   fetch(`${endpoint}/vocabulary.json`, {
@@ -70,6 +44,32 @@ const updateVocab = (payload) => new Promise((resolve, reject) => {
       'Content-Type': 'application/json',
     },
     body: JSON.stringify(payload)
+  })
+    .then((response) => response.json())
+    .then((data) => resolve(data))
+    .catch(reject);
+});
+
+// GET SINGLE Vocab
+const getSingleVocab = (firebaseKey) => new Promise((resolve, reject) => {
+  fetch(`${endpoint}/vocabulary/${firebaseKey}.json`, {
+    method: 'GET',
+    headers: {
+      'Content-Type': 'application/json',
+    }, // you technically do not need the options object for GET requests, but using it here for consistency
+  })
+    .then((response) => response.json())
+    .then((data) => resolve(data)) // will resolve a single object
+    .catch(reject);
+});
+
+// DELETE VOCAB
+const deleteVocab = (firebaseKey) => new Promise((resolve, reject) => {
+  fetch(`${endpoint}/vocabulary/${firebaseKey}.json`, {
+    method: 'DELETE',
+    headers: {
+      'Content-Type': 'application/json',
+    }, // you technically do not need the options object for GET requests, but using it here for consistency
   })
     .then((response) => response.json())
     .then((data) => resolve(data))
@@ -116,7 +116,7 @@ const getJavascript = (uid) => new Promise((resolve, reject) => {
   })
     .then((response) => response.json())
     .then((data) => {
-      const javascript = Object.values(data).filter((obj) => obj.categoryType === 'JavaScript');
+      const javascript = Object.values(data).filter((obj) => obj.categoryType === 'Javascript');
       resolve(javascript);
     })
     .catch(reject);
