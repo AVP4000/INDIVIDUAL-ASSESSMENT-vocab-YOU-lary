@@ -10,10 +10,8 @@ const domBuilder = () => {
   <button type="button" class="btn btn-success" id="python-btn">Python</button>
   <button type="button" class="btn btn-success" id="cplus-btn">C++</button>
   </div>
-    <div id="add-button"></div>
     <div id="form-container"></div>
     <div id="store"></div>
-    <div id="view"></div>
   </div>`;
 
   renderToDOM('#app', domString);

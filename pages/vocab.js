@@ -7,12 +7,12 @@ const emptyVocab = () => {
 };
 
 const showVocab = (array) => {
+  let domString = '';
   clearDom();
 
   //   const btnString = '<button class="btn btn-success btn-lg mb-4" id="add-vocab-btn">Add A vocab</button>';
   //   renderToDOM('#add-button', btnString);
 
-  let domString = '';
   array.forEach((obj) => {
     domString += `
     <div class="card">

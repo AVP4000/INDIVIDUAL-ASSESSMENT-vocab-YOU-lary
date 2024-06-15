@@ -13,8 +13,8 @@ const formEvents = (user) => {
         uid: user.uid,
         timeSubmitted: Date.now(),
       };
-      createVocab(payload).then(({ word }) => {
-        const patchPayload = { firebaseKey: word };
+      createVocab(payload).then(({ name }) => {
+        const patchPayload = { firebaseKey: name };
         updateVocab(patchPayload).then(() => {
           getVocab(user.uid).then(showVocab);
         });
