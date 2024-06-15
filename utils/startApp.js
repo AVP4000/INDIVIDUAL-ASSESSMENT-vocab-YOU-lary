@@ -14,7 +14,7 @@ const startApp = (user) => {
   domEvents(user); // ADD THE EVENT LISTENTERS TO THE DOM
   formEvents(user); // ADD FORM EVENT LISTENTERS TO THE DOM
   navBar(); // DYNAMICALLY ADD THE NAV
-  logoutButton(user); // ADD THE LOGOUT BUTTON COMPONENT
+  logoutButton(); // ADD THE LOGOUT BUTTON COMPONENT
   navigationEvents(user); // ATTACH THE EVENT LISTENERS TO THE NAVBAR
 
   // TODO: Put all Vocab on the DOM on App load

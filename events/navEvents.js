@@ -26,7 +26,7 @@ const navigationEvents = (user) => {
 
   // ALL VOCAB
   document.querySelector('#all-vocab').addEventListener('click', () => {
-    getVocab(user.uid).then(showVocab);
+    getVocab().then(showVocab);
   });
 
   // Filter
